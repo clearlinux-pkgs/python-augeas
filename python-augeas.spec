@@ -4,7 +4,7 @@
 #
 Name     : python-augeas
 Version  : 0.5.0
-Release  : 1
+Release  : 2
 URL      : https://pypi.python.org/packages/41/e6/4b6740cb3e31b82252099994cea751c648b846aa7874343c31d68c2215be/python-augeas-0.5.0.tar.gz
 Source0  : https://pypi.python.org/packages/41/e6/4b6740cb3e31b82252099994cea751c648b846aa7874343c31d68c2215be/python-augeas-0.5.0.tar.gz
 Summary  : Python bindings for Augeas
