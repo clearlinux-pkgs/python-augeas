@@ -4,9 +4,9 @@
 #
 Name     : python-augeas
 Version  : 0.5.0
-Release  : 2
-URL      : https://pypi.python.org/packages/41/e6/4b6740cb3e31b82252099994cea751c648b846aa7874343c31d68c2215be/python-augeas-0.5.0.tar.gz
-Source0  : https://pypi.python.org/packages/41/e6/4b6740cb3e31b82252099994cea751c648b846aa7874343c31d68c2215be/python-augeas-0.5.0.tar.gz
+Release  : 3
+URL      : http://pypi.debian.net/python-augeas/python-augeas-0.5.0.tar.gz
+Source0  : http://pypi.debian.net/python-augeas/python-augeas-0.5.0.tar.gz
 Summary  : Python bindings for Augeas
 Group    : Development/Tools
 License  : LGPL-2.1 LGPL-2.1+
@@ -32,20 +32,27 @@ python components for the python-augeas package.
 %setup -q -n python-augeas-0.5.0
 
 %build
+export http_proxy=http://127.0.0.1:9/
+export https_proxy=http://127.0.0.1:9/
+export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1485899977
+export SOURCE_DATE_EPOCH=1503075506
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
 %install
-export SOURCE_DATE_EPOCH=1485899977
+export SOURCE_DATE_EPOCH=1503075506
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
+echo ----[ mark ]----
+cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
+echo ----[ mark ]----
 
 %files
 %defattr(-,root,root,-)
 
 %files python
 %defattr(-,root,root,-)
-/usr/lib/python*/*
+/usr/lib/python2*/*
+/usr/lib/python3*/*
