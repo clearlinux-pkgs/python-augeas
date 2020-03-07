@@ -4,7 +4,7 @@
 #
 Name     : python-augeas
 Version  : 1.0.3
-Release  : 20
+Release  : 21
 URL      : https://files.pythonhosted.org/packages/b4/d7/62d335d9df28e2f78207dcd12bbbcee89a7b5ba6d247feaddc9d04f27e1e/python-augeas-1.0.3.tar.gz
 Source0  : https://files.pythonhosted.org/packages/b4/d7/62d335d9df28e2f78207dcd12bbbcee89a7b5ba6d247feaddc9d04f27e1e/python-augeas-1.0.3.tar.gz
 Summary  : Python bindings for Augeas
@@ -42,7 +42,6 @@ python components for the python-augeas package.
 Summary: python3 components for the python-augeas package.
 Group: Default
 Requires: python3-core
-Provides: pypi(python-augeas)
 
 %description python3
 python3 components for the python-augeas package.
@@ -57,8 +56,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1583211093
-# -Werror is for werrorists
+export SOURCE_DATE_EPOCH=1583539769
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$CFLAGS -fno-lto "
