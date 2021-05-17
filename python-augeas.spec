@@ -4,7 +4,7 @@
 #
 Name     : python-augeas
 Version  : 1.1.0
-Release  : 30
+Release  : 31
 URL      : https://files.pythonhosted.org/packages/af/cc/5064a3c25721cd863e6982b87f10fdd91d8bcc62b6f7f36f5231f20d6376/python-augeas-1.1.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/af/cc/5064a3c25721cd863e6982b87f10fdd91d8bcc62b6f7f36f5231f20d6376/python-augeas-1.1.0.tar.gz
 Summary  : Python bindings for Augeas
@@ -42,6 +42,7 @@ python components for the python-augeas package.
 Summary: python3 components for the python-augeas package.
 Group: Default
 Requires: python3-core
+Provides: pypi(python_augeas)
 
 %description python3
 python3 components for the python-augeas package.
@@ -56,7 +57,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1615275698
+export SOURCE_DATE_EPOCH=1621276043
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
@@ -79,6 +80,9 @@ python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
 echo ----[ mark ]----
+## install_append content
+rm -rf %{buildroot}/usr/lib/python3*/site-packages/test
+## install_append end
 
 %files
 %defattr(-,root,root,-)
